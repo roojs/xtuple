@@ -31,9 +31,9 @@ IF (DEBUG)
 END IF;
 
 -- right
-SELECT  substring(_rightVersion FROM $$(\d+)\.\d+\.\d+$$)::SMALLINT, 
-	substring(_rightVersion FROM $$\d+\.(\d+)\.\d+$$)::SMALLINT, 
-	substring(_rightVersion FROM $$\d+\.\d+\.(\d+)$$)::SMALLINT 
+SELECT  substring(_rightVersion FROM $$(\d+)\.\d+\D+\d+$$)::SMALLINT, 
+	substring(_rightVersion FROM $$\d+\.(\d+)\D+\d+$$)::SMALLINT, 
+	substring(_rightVersion FROM $$\d+\.\d+\D+(\d+)$$)::SMALLINT 
 	INTO _rightMajor, _rightMinor, _rightPatch;
 
 IF (DEBUG)
